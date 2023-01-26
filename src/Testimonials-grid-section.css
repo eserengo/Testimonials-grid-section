@@ -1,0 +1,218 @@
+/*
+ Name: Testimonials grid section.
+ Description: A Frontendmentor.io coding challenge.
+ Author: Federico Borzani
+ Author URL:  https://github.com/eserengo/
+*/
+
+/* --- TAGS --- */
+
+:root {
+
+  /* --- FONTS --- */
+
+  font-family: "Barlow Semi Condensed";
+  font-size: 13px;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+
+  /* --- COLOR PALETTE --- */
+
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+
+  /* Note for text colors:
+  1. "Verified Graduate" has the same color as the person's name with 50% opacity
+  2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0%;
+  margin: 0%;
+  user-select: none;
+}
+
+body {
+  min-height: 100vh;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+/* --- GENERAL CLASSES --- */
+
+.hidden {
+  display: none;
+}
+
+.selectable:hover {
+  cursor: pointer;
+  user-select: all;
+}
+
+.rel {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.flex-row.center,
+.flex-col.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.abs.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* --- SPECIFIC CLASSES --- */
+
+.body {
+  min-width: 200px;
+}
+
+.main {
+  background-color: var(--Light-grayish-blue);
+  gap: 24px;
+  padding: 10% 5%;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 24px;
+  position: relative;
+}
+
+.avatar {
+  width: 24px;
+  border: 2px solid var(--Light-gray);
+  border-radius: 50%;
+}
+
+.name {
+  position: absolute;
+  top: 20px;
+  left: 64px;
+}
+
+.vg {
+  position: absolute;
+  top: 34px;
+  left: 64px;
+  opacity: 50%;
+}
+
+.quote {
+  font-size: 150%;
+}
+
+.review {
+  margin-top: 24px;
+  opacity: 70%;
+}
+
+.card-1 {
+  background-color: var(--Moderate-violet);
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 90% 0%;
+  color: var(--Light-gray);
+}
+
+.card-2 {
+  background-color: var(--Very-dark-grayish-blue);
+  color: var(--White);
+}
+
+.card-3 {
+  background-color: var(--White);
+  color: var(--Very-dark-blackish-blue);
+}
+
+.card-4 {
+  background-color: var(--Very-dark-blackish-blue);
+  color: var(--White);
+}
+
+.card-5 {
+  background-color: var(--White);
+  color: var(--Very-dark-grayish-blue);
+}
+
+.attribution {
+  font-size: 75%;
+  text-align: center;
+  height: 24px;
+}
+
+/* --- MEDIA QUERIES --- */
+
+@media screen and (width > 375px) {
+  .body {
+    min-width: 800px;
+    overflow: scroll;
+  }
+  .main {
+    display: grid;
+    row-gap: 24px;
+    column-gap: 24px;
+    grid-template-rows: repeat(2, 46%);
+    grid-template-columns: repeat(4, 23%);
+    padding: 5%;
+  }
+  .card-1 {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+  }
+  .card-2 {
+    grid-row: 1;
+    grid-column: 3;
+  }
+  .card-3 {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .card-4 {
+    grid-row: 2;
+    grid-column: 2 / span 2;
+  }
+  .card-5 {
+    grid-row: 1 / span 2;
+    grid-column: 4;
+  }
+}
